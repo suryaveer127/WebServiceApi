@@ -56,6 +56,16 @@
       cursor: pointer;
       transition: 0.3s;
     }
+    .error {
+  color: red;
+  font-size: 14px;
+  display: block;      
+  min-height: 16px;     
+  margin-top: -8px;     
+  margin-bottom: 8px;  
+  line-height: 1.2em;
+}
+
 
     
   </style>
@@ -63,10 +73,11 @@
 <body>
   <div class="form-container">
     <h2> Registration</h2>
-    <form id="user">
-      <input name="firstName" placeholder="First Name" required>
+    <form id="user" name="myForm">
+      <input id="fname" name="firstName" placeholder="First Name" required>
+      
       <input name="lastName" placeholder="Last Name" required>
-      <input name="mobile" placeholder="10 digit Mobile" required maxlength="10" pattern="\d{10}">
+      <input name="mobile" placeholder="10 digit Mobile" required maxlength="10">
       <input name="email" placeholder="Email" required type="email">
       <input name="street" placeholder="Street" required>
       <input name="city" placeholder="City" required>
@@ -74,9 +85,12 @@
       <input name="country" placeholder="Country" required>
       <input name="loginId" placeholder=" Login ID" required minlength="8" maxlength="8">
       <input name="password" type="password" placeholder="Password" minlength="6" maxlength="6"required>
+      <span id="errorMsg" class="error"></span>
       <button type="submit">Save</button>
       <button type="button" id="viewUsersBtn" style="flex:1; background: white; color:#007bff ;">View Users</button>
     </form>
+    
+     
   </div>
 <div id="userList"></div>
   <script src="js/main.js"></script>
